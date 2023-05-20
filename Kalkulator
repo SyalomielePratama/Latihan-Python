@@ -1,0 +1,46 @@
+def menu():
+    print("="*25)
+    print("Kalkulator BRO")
+    print("="*25)
+
+    menu = [
+        "1. Tambah ", "2. Kurang" , "3. Kali" , "4. Bagi" , "5. Sisa"
+    ]
+    for i in menu :
+        print(i)
+
+def user():
+    print("="*25)
+    pilih = int(input("Masukkan Pilihan :"))
+    print("="*25)
+
+    if pilih == 1 :
+        userCount = input('berapa bilangan yang ingin di oprasikan: ')
+        print("="*25)
+
+        userNum = []
+        for i in range(int(userCount)):
+            userNum.append(input('Masukan nilai bilangan ke-'+str(i+1)+':'))
+        
+        print("="*25)
+
+        hasil = 0
+
+        for i in range(int(len(userNum))):
+            hasil += int(userNum[i])
+        print("Hasil Penjumlahan Adalah :",hasil)
+        print("="*25)
+        ulang()
+
+def ulang():
+    ulang = input("Apakah Anda Ingin Mengulang Operasi Lain (y/n)?:")
+    if ulang.lower() == "y":
+        menu()
+        user()
+    elif ulang.lower()== "n":
+        print("terimakasih")
+    else:
+        print("Pilihan tidak Ada ")
+
+menu()
+user()
